@@ -201,9 +201,11 @@ let activeCategory = 'All';
 
 function showCategory(category){
     activeCategory = category;
+    document.getElementById('search').value = '';
     filterProducts();
+
     document.getElementById('products').scrollIntoView({
-        behavior:'smooth'
+        behavior: 'smooth'
     });
 }
 
@@ -214,12 +216,14 @@ function filterProducts(){
 
     products.forEach(function(product){
         let nameMatch = product.innerText.toLowerCase().includes(value);
-        let categoryMatch = activeCategory === 'All' ||
+
+        let categoryMatch =
+            activeCategory === 'All' ||
             product.dataset.category === activeCategory;
 
         let match = nameMatch && categoryMatch;
 
-        product.style.display = match ? 'block' : 'none';
+        product.style.display = match ? '' : 'none';
 
         if(match) count++;
     });
@@ -231,6 +235,8 @@ function filterProducts(){
         message.id = 'noResults';
         message.style.textAlign = 'center';
         message.style.padding = '20px';
+        message.style.fontSize = '18px';
+
         document.getElementById('productList').after(message);
     }
 
