@@ -210,14 +210,20 @@ function showCategory(category){
 }
 
 function filterProducts(){
+
     let value = document.getElementById('search').value.trim().toLowerCase();
+
     let products = document.querySelectorAll('#productList .product');
     let count = 0;
 
     products.forEach(function(product){
-        let nameMatch = product.innerText.toLowerCase().includes(value);
+
+        let name = product.querySelector('h3').innerText.toLowerCase();
+
+        let nameMatch = name.includes(value);
 
         let categoryMatch =
+            value !== '' ||
             activeCategory === 'All' ||
             product.dataset.category === activeCategory;
 
@@ -243,10 +249,13 @@ function filterProducts(){
     message.innerText = count === 0 ? 'No Products Found!' : '';
     message.style.display = count === 0 ? 'block' : 'none';
 }
+
 function viewProduct(button){
-let name=button.parentElement.querySelector('h3').innerText;
-alert(name+' is a demo product. Product details and ordering will be added soon.');
+    let name = button.parentElement.querySelector('h3').innerText;
+    alert(name + ' is a demo product. Product details and ordering will be added soon.');
 }
+</script>
+
 </script>
 
 </body>
