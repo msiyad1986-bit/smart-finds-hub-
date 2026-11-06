@@ -205,10 +205,22 @@ document.getElementById('search').value='';
 document.getElementById('products').scrollIntoView({behavior:'smooth'});
 }
 function filterProducts(){
-let value=document.getElementById('search').value.toLowerCase();
-document.querySelectorAll('#productList .product').forEach(p=>{
-p.style.display=p.innerText.toLowerCase().includes(value)?'block':'none';
-});
+    let searchBox = document.getElementById('search');
+    let value = searchBox.value.trim().toLowerCase();
+
+    let products = document.querySelectorAll('#productList .product');
+    let count = 0;
+
+    products.forEach(function(product){
+        let name = product.innerText.toLowerCase();
+
+        if(name.includes(value)){
+            product.style.display = 'block';
+            count++;
+        } else {
+            product.style.display = 'none';
+        }
+    });
 }
 function viewProduct(button){
 let name=button.parentElement.querySelector('h3').innerText;
