@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Finds Hub | Shop Smart</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#202638}
+header{background:#14213d;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:23px;font-weight:bold;color:#ffca3a}
+nav a{color:white;text-decoration:none;margin:0 9px;font-size:14px}
+.hero{padding:55px 7%;background:linear-gradient(120deg,#14213d,#31558b);color:white;text-align:center}
+.hero h1{font-size:36px;margin-bottom:14px}
+.hero p{font-size:16px;margin-bottom:22px}
+.search{max-width:500px;width:100%;padding:14px;border:0;border-radius:8px;font-size:15px}
+.section{padding:35px 5%}
+.section h2{margin-bottom:22px;font-size:24px}
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}
+.category{background:white;padding:22px 10px;border-radius:12px;text-align:center;box-shadow:0 2px 10px #0000000c;font-weight:bold}
+.category span{display:block;font-size:32px;margin-bottom:10px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
+.product{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px #00000010}
+.product .pic{height:130px;background:#e8edf5;display:flex;align-items:center;justify-content:center;font-size:48px}
+.product h3{font-size:16px;margin:12px}
+.product p{margin:0 12px 12px;color:#16834b;font-weight:bold}
+.product button{margin:0 12px 15px;padding:10px;border:0;border-radius:6px;background:#14213d;color:white;width:calc(100% - 24px)}
+.banner{margin:10px 5% 35px;padding:30px;background:#ffca3a;border-radius:14px;text-align:center}
+footer{background:#14213d;color:white;text-align:center;padding:25px;line-height:2}
+footer a{color:#ffca3a;text-decoration:none}
+@media(max-width:600px){.hero h1{font-size:28px}header{justify-content:center}nav{text-align:center}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">🛍️ Smart Finds Hub</div>
+<nav>
+<a href="#">Home</a>
+<a href="#categories">Categories</a>
+<a href="#products">Products</a>
+<a href="#seller">Sell With Us</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Discover More. Shop Smart.</h1>
+<p>Your Destination for Fashion & Lifestyle</p>
+<input class="search" id="search" placeholder="Search products..." oninput="searchProducts()">
+</section>
+
+<section class="section" id="categories">
+<h2>Shop By Category</h2>
+<div class="categories">
+<div class="category"><span>👔</span>Men's Wear</div>
+<div class="category"><span>👗</span>Women's Wear</div>
+<div class="category"><span>🧒</span>Kids Wear</div>
+<div class="category"><span>👟</span>Footwear</div>
+<div class="category"><span>⌚</span>Watches</div>
+<div class="category"><span>👜</span>Bags</div>
+<div class="category"><span>🏏</span>Sports Wear</div>
+<div class="category"><span>🏍️</span>Riding Gear</div>
+</div>
+</section>
+
+<section class="section" id="products">
+<h2>Featured Products</h2>
+<div class="products" id="productList">
+<div class="product"><div class="pic">👕</div><h3>Men's Fashion</h3><p>Coming Soon</p><button>Explore</button></div>
+<div class="product"><div class="pic">👗</div><h3>Women's Fashion</h3><p>Coming Soon</p><button>Explore</button></div>
+<div class="product"><div class="pic">👟</div><h3>Trendy Footwear</h3><p>Coming Soon</p><button>Explore</button></div>
+<div class="product"><div class="pic">⌚</div><h3>Watches & Accessories</h3><p>Coming Soon</p><button>Explore</button></div>
+</div>
+</section>
+
+<section class="banner" id="seller">
+<h2>Become a Seller!</h2>
+<p>Grow your business with Smart Finds Hub.</p>
+<p>Seller registration coming soon.</p>
+</section>
+
+<footer>
+<h3>Smart Finds Hub</h3>
+<p>Shop Smart. Find More.</p>
+<p>India | Multi-Vendor Marketplace</p>
+<p>© 2026 Smart Finds Hub. All Rights Reserved.</p>
+</footer>
+
+<script>
+function searchProducts(){
+let value=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".product").forEach(item=>{
+item.style.display=item.innerText.toLowerCase().includes(value)?"block":"none";
+});
+}
+</script>
+
+</body>
+</html>
