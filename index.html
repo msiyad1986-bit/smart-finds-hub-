@@ -50,7 +50,7 @@ nav{justify-content:flex-start}
 
 <header>
 <div class="logo">🛍️ SMART FINDS HUB</div>
-<input class="search" id="search" placeholder="Search products..." oninput="document.querySelectorAll('#productList .product').forEach(p=>p.style.display=p.innerText.toLowerCase().includes(this.value.toLowerCase())?'block':'none')">
+<input class="search" id="search" placeholder="Search products..." oninput="filterProducts()">
 <div class="header-links">
 <a href="#seller">Sell With Us</a>
 <a href="#products">🛒 Shop</a>
@@ -205,11 +205,32 @@ document.getElementById('search').value='';
 document.getElementById('products').scrollIntoView({behavior:'smooth'});
 }
 function filterProducts(){
-    let searchBox = document.getElementById('search');
-    let value = searchBox.value.trim().toLowerCase();
-
+    let value = document.getElementById('search').value.trim().toLowerCase();
     let products = document.querySelectorAll('#productList .product');
     let count = 0;
+
+    products.forEach(function(product){
+        let match = product.innerText.toLowerCase().includes(value);
+
+        product.style.display = match ? 'block' : 'none';
+
+        if(match) count++;
+    });
+
+    let message = document.getElementById('noResults');
+
+    if(!message){
+        message = document.createElement('p');
+        message.id = 'noResults';
+        message.style.textAlign = 'center';
+        message.style.padding = '20px';
+        message.style.fontSize = '18px';
+        document.getElementById('productList').after(message);
+    }
+
+    message.innerText = count === 0 ? 'No Products Found!' : '';
+    message.style.display = count === 0 ? 'block' : 'none';
+}
 
     products.forEach(function(product){
         let name = product.innerText.toLowerCase();
