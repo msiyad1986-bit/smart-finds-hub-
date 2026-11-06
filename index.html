@@ -197,20 +197,27 @@ nav{justify-content:flex-start}
 </footer>
 
 <script>
+let activeCategory = 'All';
+
 function showCategory(category){
-document.querySelectorAll('#productList .product').forEach(p=>{
-p.style.display=(category==='All'||p.dataset.category===category)?'block':'none';
-});
-document.getElementById('search').value='';
-document.getElementById('products').scrollIntoView({behavior:'smooth'});
+    activeCategory = category;
+    filterProducts();
+    document.getElementById('products').scrollIntoView({
+        behavior:'smooth'
+    });
 }
+
 function filterProducts(){
     let value = document.getElementById('search').value.trim().toLowerCase();
     let products = document.querySelectorAll('#productList .product');
     let count = 0;
 
     products.forEach(function(product){
-        let match = product.innerText.toLowerCase().includes(value);
+        let nameMatch = product.innerText.toLowerCase().includes(value);
+        let categoryMatch = activeCategory === 'All' ||
+            product.dataset.category === activeCategory;
+
+        let match = nameMatch && categoryMatch;
 
         product.style.display = match ? 'block' : 'none';
 
@@ -224,24 +231,11 @@ function filterProducts(){
         message.id = 'noResults';
         message.style.textAlign = 'center';
         message.style.padding = '20px';
-        message.style.fontSize = '18px';
         document.getElementById('productList').after(message);
     }
 
     message.innerText = count === 0 ? 'No Products Found!' : '';
     message.style.display = count === 0 ? 'block' : 'none';
-}
-
-    products.forEach(function(product){
-        let name = product.innerText.toLowerCase();
-
-        if(name.includes(value)){
-            product.style.display = 'block';
-            count++;
-        } else {
-            product.style.display = 'none';
-        }
-    });
 }
 function viewProduct(button){
 let name=button.parentElement.querySelector('h3').innerText;
