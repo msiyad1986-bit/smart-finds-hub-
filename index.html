@@ -4,38 +4,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Finds Hub | Shop Smart</title>
+<title>Smart Finds Hub | Discover More. Shop Smart.</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#202638}
-header{background:#14213d;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.logo{font-size:23px;font-weight:bold;color:#ffca3a}
-nav a{color:white;text-decoration:none;margin:0 9px;font-size:14px}
-.hero{padding:55px 7%;background:linear-gradient(120deg,#14213d,#31558b);color:white;text-align:center}
-.hero h1{font-size:36px;margin-bottom:14px}
-.hero p{font-size:16px;margin-bottom:22px}
-.search{max-width:500px;width:100%;padding:14px;border:0;border-radius:8px;font-size:15px}
-.section{padding:35px 5%}
-.section h2{margin-bottom:22px;font-size:24px}
-.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}
-.category{background:white;padding:22px 10px;border-radius:12px;text-align:center;box-shadow:0 2px 10px #0000000c;font-weight:bold}
-.category span{display:block;font-size:32px;margin-bottom:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f7f7f9;color:#20212a}
+header{background:#101b35;color:white;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:23px;font-weight:bold;color:#ffcb45}
+nav a{color:white;text-decoration:none;margin-left:17px;font-size:14px}
+.hero{background:linear-gradient(120deg,#101b35,#354e7b);color:white;text-align:center;padding:65px 15px}
+.hero h1{font-size:38px;margin-bottom:15px}
+.hero p{font-size:17px;margin-bottom:25px}
+.search{width:90%;max-width:520px;padding:15px;border:0;border-radius:30px;font-size:15px}
+.section{padding:38px 6%}
+.section h2{font-size:25px;margin-bottom:22px}
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:15px}
+.category{background:white;border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 3px 12px #0000000b;font-weight:bold}
+.category span{display:block;font-size:37px;margin-bottom:12px}
+.banner{margin:10px 6% 35px;background:#ffcb45;border-radius:16px;text-align:center;padding:35px 15px;color:#18213a}
+.banner h2{font-size:26px;margin-bottom:10px}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
-.product{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px #00000010}
-.product .pic{height:130px;background:#e8edf5;display:flex;align-items:center;justify-content:center;font-size:48px}
-.product h3{font-size:16px;margin:12px}
-.product p{margin:0 12px 12px;color:#16834b;font-weight:bold}
-.product button{margin:0 12px 15px;padding:10px;border:0;border-radius:6px;background:#14213d;color:white;width:calc(100% - 24px)}
-.banner{margin:10px 5% 35px;padding:30px;background:#ffca3a;border-radius:14px;text-align:center}
-footer{background:#14213d;color:white;text-align:center;padding:25px;line-height:2}
-footer a{color:#ffca3a;text-decoration:none}
-@media(max-width:600px){.hero h1{font-size:28px}header{justify-content:center}nav{text-align:center}}
+.product{background:white;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px #00000010}
+.pic{height:145px;background:#e9edf5;display:flex;justify-content:center;align-items:center;font-size:55px}
+.product h3{font-size:16px;padding:13px 12px 7px}
+.product p{color:#16834b;font-weight:bold;padding:0 12px 12px}
+.product button{margin:0 12px 15px;width:calc(100% - 24px);padding:11px;background:#172744;color:white;border:0;border-radius:7px}
+footer{background:#101b35;color:white;text-align:center;padding:28px 12px;line-height:2}
+footer p{font-size:13px}
+@media(max-width:600px){
+header{justify-content:center;text-align:center}
+nav a{margin:0 7px}
+.hero h1{font-size:29px}
+.section{padding:28px 5%}
+}
 </style>
 </head>
 <body>
-
 <header>
-<div class="logo">🛍️ Smart Finds Hub</div>
+<div class="logo">🛍️ SMART FINDS HUB</div>
 <nav>
 <a href="#">Home</a>
 <a href="#categories">Categories</a>
@@ -46,12 +51,12 @@ footer a{color:#ffca3a;text-decoration:none}
 
 <section class="hero">
 <h1>Discover More. Shop Smart.</h1>
-<p>Your Destination for Fashion & Lifestyle</p>
-<input class="search" id="search" placeholder="Search products..." oninput="searchProducts()">
+<p>Explore Fashion. Find Your Style. Shop with Confidence.</p>
+<input class="search" id="search" placeholder="🔍 Search your favourite products..." oninput="searchProducts()">
 </section>
 
 <section class="section" id="categories">
-<h2>Shop By Category</h2>
+<h2>Explore Categories</h2>
 <div class="categories">
 <div class="category"><span>👔</span>Men's Wear</div>
 <div class="category"><span>👗</span>Women's Wear</div>
@@ -59,31 +64,38 @@ footer a{color:#ffca3a;text-decoration:none}
 <div class="category"><span>👟</span>Footwear</div>
 <div class="category"><span>⌚</span>Watches</div>
 <div class="category"><span>👜</span>Bags</div>
-<div class="category"><span>🏏</span>Sports Wear</div>
+<div class="category"><span>🏃</span>Sports Wear</div>
 <div class="category"><span>🏍️</span>Riding Gear</div>
+<div class="category"><span>🧢</span>Hats & Caps</div>
+<div class="category"><span>👕</span>Jerseys</div>
 </div>
 </section>
 
+<section class="banner">
+<h2>Welcome to Smart Finds Hub!</h2>
+<p>Your new destination for fashion and lifestyle shopping.</p>
+</section>
+
 <section class="section" id="products">
-<h2>Featured Products</h2>
+<h2>Featured Collections</h2>
 <div class="products" id="productList">
-<div class="product"><div class="pic">👕</div><h3>Men's Fashion</h3><p>Coming Soon</p><button>Explore</button></div>
-<div class="product"><div class="pic">👗</div><h3>Women's Fashion</h3><p>Coming Soon</p><button>Explore</button></div>
-<div class="product"><div class="pic">👟</div><h3>Trendy Footwear</h3><p>Coming Soon</p><button>Explore</button></div>
-<div class="product"><div class="pic">⌚</div><h3>Watches & Accessories</h3><p>Coming Soon</p><button>Explore</button></div>
+<div class="product"><div class="pic">👕</div><h3>Men's Collection</h3><p>Coming Soon</p><button>Explore</button></div>
+<div class="product"><div class="pic">👗</div><h3>Women's Collection</h3><p>Coming Soon</p><button>Explore</button></div>
+<div class="product"><div class="pic">👟</div><h3>Footwear Collection</h3><p>Coming Soon</p><button>Explore</button></div>
+<div class="product"><div class="pic">⌚</div><h3>Accessories</h3><p>Coming Soon</p><button>Explore</button></div>
 </div>
 </section>
 
 <section class="banner" id="seller">
-<h2>Become a Seller!</h2>
-<p>Grow your business with Smart Finds Hub.</p>
-<p>Seller registration coming soon.</p>
+<h2>Become a Seller</h2>
+<p>Bring your products to thousands of potential customers.</p>
+<p>Seller registration coming soon!</p>
 </section>
 
 <footer>
-<h3>Smart Finds Hub</h3>
-<p>Shop Smart. Find More.</p>
-<p>India | Multi-Vendor Marketplace</p>
+<h3>SMART FINDS HUB</h3>
+<p>Discover More. Shop Smart.</p>
+<p>India's Fashion Marketplace</p>
 <p>© 2026 Smart Finds Hub. All Rights Reserved.</p>
 </footer>
 
@@ -95,6 +107,5 @@ item.style.display=item.innerText.toLowerCase().includes(value)?"block":"none";
 });
 }
 </script>
-
 </body>
 </html>
