@@ -50,7 +50,7 @@ nav{justify-content:flex-start}
 
 <header>
 <div class="logo">🛍️ SMART FINDS HUB</div>
-<input class="search" id="search" placeholder="Search products..." oninput="filterProducts(); console.log('Search working')">
+<input class="search" id="search" placeholder="Search products..." oninput="document.querySelectorAll('#productList .product').forEach(p=>p.style.display=p.innerText.toLowerCase().includes(this.value.toLowerCase())?'block':'none')">
 <div class="header-links">
 <a href="#seller">Sell With Us</a>
 <a href="#products">🛒 Shop</a>
